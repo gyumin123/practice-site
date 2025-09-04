@@ -1,6 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8">
-    <title>연습 사이트</title></head>
-<body><h1>안녕 내 첫 사이트 🚀</h1></body>
-</html>' > index.html
+<html lang = "ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <title>Login Page</title>
+    <link rel = "stylesheet" type = "text/css" href = "LOGIN/css/style.css">
+</head>
+<body>
+   <section class="login-form" >
+    <h1>로그인</h1>
+    <form method="get" action="loginok.html" autocomplete="off">
+        <div class="int-area" >
+            <input type="text" name="id" id="id" required>
+            <label for="id" >아이디</label>
+            </div>
+        <div class="int-area" >
+            <input type="password" name="password" id="password" required>
+            <label for="password" >비밀번호</label>
+        </div>
+        <div class="btn-area">
+            <button type="submit" id="btn">로그인</button>
+        </div>
+    </form>
+       <div class="caption">
+        <a href="forgot_password.html"> 비밀번호 찾기</a>
+       </div>
+   </section>
+    <script>
+        const id = document.querySelector('#id');
+        const password = document.querySelector('#password');
+        const btn = document.querySelector('#btn');
+
+        function form_checking() {
+        if(id.value == "" ) {
+        alert('아이디를 입력바랍니다.');
+        id.focus();
+        return false;
+        }
+        if(password.value == "" ) {
+            alert('비밀번호를 입력바랍니다.');
+                password.focus();
+                return false;
+            }
+        }
+        btn.addEventListener("click", form_checking);
+    </script>
+
+</body>
+</html>
+
